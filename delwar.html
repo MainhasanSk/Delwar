@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delwar Sayed - Sales Expert & Trainer | Sales Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --secondary: #e8a200;
+            --accent: #d32f2f;
+            --light-bg: #f5f7fa;
+            --text: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.25);
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f2f5 100%);
+            background-attachment: fixed;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.35;
+            animation: blob-animation 15s infinite ease-in-out;
+        }
+
+        .blob:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #e8a200, #ffb84d);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #1a472a, #2d6a4f);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 5s;
+        }
+
+        .blob:nth-child(3) {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #d32f2f, #e8a200);
+            bottom: 200px;
+            right: 100px;
+            animation-delay: 10s;
+        }
+
+        @keyframes blob-animation {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 2rem 40px;
+            background: white;
+            position: relative;
+            z-index: 10;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Profile Picture */
+        .profile-pic-container {
+            position: relative;
+            margin-bottom: 2rem;
+            animation: zoomIn 1s ease 0.2s both;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .profile-pic-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(232, 162, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            animation: floatingProfile 4s ease-in-out infinite;
+        }
+
+        @keyframes floatingProfile {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .profile-pic-box::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(135deg, var(--secondary), #ffb84d);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 8s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-pic-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Profile Info */
+        .profile-info {
+            text-align: center;
+            max-width: 700px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .profile-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7fa, #ffffff);
+            border-radius: 15px;
+        }
+
+        .detail-item {
+            animation: slideInUp 0.8s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Social Media Section */
+        .social-media-section {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .social-link {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: popIn 0.6s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .social-link.facebook {
+            background: linear-gradient(135deg, #1877f2, #0a66c2);
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-link.twitter {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+        }
+
+        .social-link.linkedin {
+            background: linear-gradient(135deg, #0077b5, #004182);
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .social-link:hover i {
+            transform: rotateY(360deg) scale(1.1);
+        }
+
+        .social-link::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-link:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Book Consultation Button */
+        .book-consultation-btn {
+            padding: 14px 40px;
+            background: linear-gradient(135deg, var(--accent), #ff1a4d);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+            animation: fadeInUp 1s ease 0.5s both;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .book-consultation-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(211, 47, 47, 0.5);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 0.4s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .close-btn:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            animation: slideInUp 0.6s ease;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 15px rgba(232, 162, 0, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--secondary), #ffb84d);
+            color: var(--primary);
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(232, 162, 0, 0.3);
+        }
+
+        /* Bio Section */
+        .bio-section {
+            max-width: 700px;
+            margin: 0 auto 6rem;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .bio-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bio-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .bio-text {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sections Container */
+        .sections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+            animation: slideDown 0.8s ease 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+
+        .section-subtitle {
+            color: #999;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 1s ease;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa, #ffffff);
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 50px rgba(232, 162, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d6a4f 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .skills-section .section-title {
+            color: white;
+        }
+
+        .skills-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(232, 162, 0, 0.15), transparent);
+            border-radius: 50%;
+            animation: pulse-award 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-award {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .skill-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--secondary);
+            box-shadow: 0 25px 50px rgba(232, 162, 0, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-level {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 1s ease;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, var(--secondary), #ffb84d);
+            color: var(--primary);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(232, 162, 0, 0.3);
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--secondary), #ffb84d);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .contact-cta h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .contact-cta p {
+            font-size: 1.05rem;
+            color: rgba(26, 71, 42, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .contact-btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 71, 42, 0.3);
+        }
+
+        .contact-btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .contact-btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .profile-details {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .profile-pic-box {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .skills-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 2rem;
+                max-width: 90%;
+            }
+
+            .bio-section {
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-pic-container">
+            <div class="profile-pic-box">
+                <img src="delwar.jpg" alt="Delwar Sayed">
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <h1 class="profile-name">Delwar Sayed</h1>
+            <p class="profile-title">Sales Expert & Professional Trainer</p>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <div class="detail-label">💼 Experience</div>
+                    <div class="detail-value">4+ Years</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">🎓 Education</div>
+                    <div class="detail-value">BA Graduate</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">📍 Location</div>
+                    <div class="detail-value">Barpeta Road, Assam</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">🏢 Current</div>
+                    <div class="detail-value">Maruti Suzuki</div>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-media-section">
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer" class="social-link facebook" data-tooltip="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/deluwar.hussain.716?igsh=M2YyaDU1Z3BxNXk1" target="_blank" rel="noopener noreferrer" class="social-link instagram" data-tooltip="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                  <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener noreferrer" class="social-link twitter" data-tooltip="X (Twitter)">
+    <i class="fab fa-twitter"></i>
+</a>
+                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank" rel="noopener noreferrer" class="social-link linkedin" data-tooltip="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <!-- Book Training Button -->
+            <button class="book-consultation-btn" onclick="openBookingModal()">📅 Book Training Session</button>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Training Session</h2>
+                <button class="close-btn" onclick="closeBookingModal()">&times;</button>
+            </div>
+
+            <form id="trainingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="trainingType">Training Type *</label>
+                    <input type="text" id="trainingType" name="trainingType" required placeholder="e.g., Sales Techniques, Customer Relations">
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bio Section -->
+    <div class="sections-container">
+        <div class="bio-section">
+            <h2 class="bio-title">Professional Biography</h2>
+            <p class="bio-text">
+                Delwar Sayed is a highly skilled sales professional with over 4 years of expertise in the automotive sales industry, currently working with Maruti Suzuki. With a Bachelor's degree from Bhawanipur Anchalik College, he has developed exceptional skills in customer relationship management, sales strategy, and business development.
+                <br><br>
+                Beyond his corporate role, Delwar is a passionate sales trainer and entrepreneur who also runs his own business. His practical approach to sales training, combined with real-world experience, makes him an ideal mentor for aspiring sales professionals. Based in Barpeta Road, Assam, he is dedicated to helping individuals and businesses achieve their sales goals through proven techniques and personalized coaching.
+            </p>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section">
+            <div class="section-header">
+                <h2 class="section-title">Services Offered</h2>
+                <p class="section-subtitle">Expert training and consulting services</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">📚</div>
+                    <div class="service-name">Sales Training Programs</div>
+                    <div class="service-desc">Comprehensive training in modern sales techniques, customer engagement, and closing strategies</div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">💡</div>
+                    <div class="service-name">One-on-One Coaching</div>
+                    <div class="service-desc">Personalized coaching sessions tailored to individual sales goals and challenges</div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">📊</div>
+                    <div class="service-name">Sales Strategy Consulting</div>
+                    <div class="service-desc">Strategic guidance for business growth, market analysis, and customer acquisition</div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">👥</div>
+                    <div class="service-name">Corporate Workshops</div>
+                    <div class="service-desc">Interactive group workshops for corporate teams to enhance sales performance</div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">🎯</div>
+                    <div class="service-name">Lead Generation</div>
+                    <div class="service-desc">Expert strategies for identifying, qualifying, and converting high-value leads</div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">🏆</div>
+                    <div class="service-name">Negotiation Mastery</div>
+                    <div class="service-desc">Advanced techniques for closing deals and negotiating favorable business terms</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+                <p class="section-subtitle">Key skills and expertise areas</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">🎤</div>
+                    <div class="skill-name">Sales Presentation</div>
+                    <div class="skill-level">Expert Level</div>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">🤝</div>
+                    <div class="skill-name">Customer Relations</div>
+                    <div class="skill-level">Expert Level</div>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">📈</div>
+                    <div class="skill-name">Market Analysis</div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">💼</div>
+                    <div class="skill-name">Business Development</div>
+                    <div class="skill-level">Expert Level</div>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-name">Target Achievement</div>
+                    <div class="skill-level">Expert Level</div>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-icon">🔄</div>
+                    <div class="skill-name">Client Retention</div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="achievements-section">
+            <div class="section-header">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="section-subtitle">Proven track record of success</p>
+            </div>
+
+            <div class="achievement-grid">
+                <div class="achievement-card animate-on-scroll">
+                    <div class="achievement-number">500+</div>
+                    <div class="achievement-label">Clients Trained</div>
+                </div>
+
+                <div class="achievement-card animate-on-scroll">
+                    <div class="achievement-number">95%</div>
+                    <div class="achievement-label">Success Rate</div>
+                </div>
+
+                <div class="achievement-card animate-on-scroll">
+                    <div class="achievement-number">4+</div>
+                    <div class="achievement-label">Years Experience</div>
+                </div>
+
+                <div class="achievement-card animate-on-scroll">
+                    <div class="achievement-number">100+</div>
+                    <div class="achievement-label">Corporate Clients</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA Section -->
+        <div class="contact-cta">
+            <h2>Ready to Boost Your Sales Skills?</h2>
+            <p>Get expert guidance from Delwar Sayed. Book your training session today and transform your sales performance.</p>
+            <div class="contact-buttons">
+                <a href="tel:+919999999999" class="contact-btn contact-btn-primary">Call Now: +91 9999999999</a>
+                <a href="mailto:delwarsayed@email.com" class="contact-btn contact-btn-secondary">Send Email</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Delwar Sayed. All Rights Reserved | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+    <script>
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        });
+
+        document.getElementById('trainingForm').addEventListener('submit', function(e) {
+            setTimeout(() => {
+                closeBookingModal();
+                alert('✅ Your training request has been submitted! We will contact you soon.');
+                document.getElementById('trainingForm').reset();
+            }, 500);
+        });
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            const blobs = document.querySelectorAll('.blob');
+            blobs.forEach((blob, index) => {
+                blob.style.transform = `translate(${scrollY * (0.1 + index * 0.05)}px, ${scrollY * (0.15 + index * 0.05)}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
